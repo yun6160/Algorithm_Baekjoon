@@ -12,16 +12,16 @@ let input = fs.readFileSync(filePath).toString().split(`\n`);
 
 function solution(input) {
   input.pop();
-  let answer = "";
+  let answer = '';
   input.forEach((v) => {
     let count = 0;
-    if (v !== "#") {
+    if (v !== '#') {
       v.toLowerCase()
-        .split("")
+        .split('')
         .forEach((i) => {
-          ["a", "e", "i", "o", "u"].includes(i) ? count++ : null;
+          ['a', 'e', 'i', 'o', 'u'].includes(i) ? count++ : null;
         });
-      answer += count + "\n";
+      answer += count + '\n';
     }
   });
   return answer;
