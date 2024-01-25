@@ -9,10 +9,10 @@ let input = fs.readFileSync(filePath).toString().trim();
 // 만약 인풋값이 숫자라면
 //let input = fs.readFileSync(filePath).toString().split(` `).map(function(a) {return +a})
 function solution(input) {
-    const str = input.toLowerCase();
+    const str = input.toUpperCase();
     const arr = new Array(26).fill(0);
     for (let i = 0; i < input.length; i++) {
-        arr[str.charCodeAt(i) - 97]++;
+        arr[str.charCodeAt(i) - 65]++;
     }
     const max = Math.max(...arr);
     const index = arr.indexOf(max);
@@ -26,6 +26,6 @@ function solution(input) {
         }
     }
 
-    return isSame ? "?" : String.fromCharCode(index + 65).toUpperCase();
+    return isSame ? "?" : String.fromCharCode(index + 65);
 }
 console.log(solution(input));
